@@ -1,0 +1,120 @@
+From 50a90cab0bccd4acd3eb57c632ce14abdd873978 Mon Sep 17 00:00:00 2001
+From: Sabri Ünal <yakushabb@gmail.com>
+Date: Thu, 26 Mar 2026 14:43:35 +0300
+Subject: [PATCH] Fix appdata paper cuts
+
+---
+ packaging/flatpak/io.github.redddfoxxyy.pomolin.desktop      |  1 +
+ packaging/flatpak/io.github.redddfoxxyy.pomolin.metainfo.xml | 34 ++++++++++++++--------------------
+ 2 files changed, 15 insertions(+), 20 deletions(-)
+
+diff --git a/packaging/flatpak/io.github.redddfoxxyy.pomolin.desktop b/packaging/flatpak/io.github.redddfoxxyy.pomolin.desktop
+index efa76ac..7cf4132 100644
+--- a/packaging/flatpak/io.github.redddfoxxyy.pomolin.desktop
++++ b/packaging/flatpak/io.github.redddfoxxyy.pomolin.desktop
+@@ -6,3 +6,4 @@ Icon=io.github.redddfoxxyy.pomolin
+ Terminal=false
+ Type=Application
+ Categories=Utility;
++Keywords=Productivity;Pomodoro;Timer;Time;Tracker;
+diff --git a/packaging/flatpak/io.github.redddfoxxyy.pomolin.metainfo.xml b/packaging/flatpak/io.github.redddfoxxyy.pomolin.metainfo.xml
+index 127d61a..96e7ce3 100644
+--- a/packaging/flatpak/io.github.redddfoxxyy.pomolin.metainfo.xml
++++ b/packaging/flatpak/io.github.redddfoxxyy.pomolin.metainfo.xml
+@@ -6,7 +6,9 @@
+ 	<summary>Focus on what matters</summary>
+ 	<metadata_license>CC0-1.0</metadata_license>
+ 	<project_license>AGPL-3.0-only</project_license>
+-	<developer_name>Suyog Tandel</developer_name>
++  <developer id="in.suyogtandel">
++    <name>Suyog Tandel</name>
++  </developer>
+ 
+ 	<description>
+ 		<p>
+@@ -18,19 +20,11 @@
+ 
+ 	<launchable type="desktop-id">io.github.redddfoxxyy.pomolin.desktop</launchable>
+ 
+-	<requires>
++	<recommends>
+ 		<control>keyboard</control>
+ 		<control>pointing</control>
+ 		<display_length compare="ge">768</display_length>
+-	</requires>
+-
+-	<keywords>
+-		<keyword>Productivity</keyword>
+-		<keyword>Pomodoro</keyword>
+-		<keyword>Timer</keyword>
+-		<keyword>Time</keyword>
+-		<keyword>Tracker</keyword>
+-	</keywords>
++	</recommends>
+ 
+ 	<branding>
+ 		<color scheme_preference="light" type="primary">#b8bee3</color>
+@@ -41,51 +35,51 @@
+ 		<screenshot type="default">
+ 			<caption>Pomolin in Focus Mode</caption>
+ 			<image>
+-				https://raw.githubusercontent.com/RedddFoxxyy/Pomolin/v1.1.10/gitAssets/app_screenshots/screenshot1.png
++				https://raw.githubusercontent.com/lockedmutex/Pomolin/19f23c2ee4a9473a4ab62010a58991e2a9190fc7/gitAssets/app_screenshots/screenshot1.png
+ 			</image>
+ 		</screenshot>
+ 
+ 		<screenshot type="default">
+ 			<caption>Pomolin in Short Break Mode</caption>
+ 			<image>
+-				https://raw.githubusercontent.com/RedddFoxxyy/Pomolin/v1.1.10/gitAssets/app_screenshots/screenshot2.png
++				https://raw.githubusercontent.com/lockedmutex/Pomolin/19f23c2ee4a9473a4ab62010a58991e2a9190fc7/gitAssets/app_screenshots/screenshot2.png
+ 			</image>
+ 		</screenshot>
+ 
+ 		<screenshot type="default">
+ 			<caption>Pomolin in Long Break Mode</caption>
+ 			<image>
+-				https://raw.githubusercontent.com/RedddFoxxyy/Pomolin/v1.1.10/gitAssets/app_screenshots/screenshot3.png
++				https://raw.githubusercontent.com/lockedmutex/Pomolin/19f23c2ee4a9473a4ab62010a58991e2a9190fc7/gitAssets/app_screenshots/screenshot3.png
+ 			</image>
+ 		</screenshot>
+ 
+ 		<screenshot type="default">
+ 			<caption>Timer Settings</caption>
+ 			<image>
+-				https://raw.githubusercontent.com/RedddFoxxyy/Pomolin/v1.1.10/gitAssets/app_screenshots/screenshot4.png
++				https://raw.githubusercontent.com/lockedmutex/Pomolin/19f23c2ee4a9473a4ab62010a58991e2a9190fc7/gitAssets/app_screenshots/screenshot4.png
+ 			</image>
+ 		</screenshot>
+ 
+ 		<screenshot type="default">
+ 			<caption>Appearance Settings Dark Mode</caption>
+ 			<image>
+-				https://raw.githubusercontent.com/RedddFoxxyy/Pomolin/v1.1.10/gitAssets/app_screenshots/screenshot5.png
++				https://raw.githubusercontent.com/lockedmutex/Pomolin/19f23c2ee4a9473a4ab62010a58991e2a9190fc7/gitAssets/app_screenshots/screenshot5.png
+ 			</image>
+ 		</screenshot>
+ 
+ 		<screenshot type="default">
+ 			<caption>Timer Running</caption>
+ 			<image>
+-				https://raw.githubusercontent.com/RedddFoxxyy/Pomolin/v1.1.10/gitAssets/app_screenshots/screenshot6.png
++				https://raw.githubusercontent.com/lockedmutex/Pomolin/19f23c2ee4a9473a4ab62010a58991e2a9190fc7/gitAssets/app_screenshots/screenshot6.png
+ 			</image>
+ 		</screenshot>
+ 	</screenshots>
+ 
+ 	<content_rating type="oars-1.1"/>
+ 
+-	<url type="homepage">https://redddfoxxyy.github.io/Pomolin/</url>
+-	<url type="bugtracker">https://github.com/RedddFoxxyy/Pomolin/issues</url>
+-	<url type="vcs-browser">https://github.com/RedddFoxxyy/Pomolin</url>
++	<url type="homepage">https://lockedmutex.github.io/Pomolin</url>
++	<url type="bugtracker">https://github.com/lockedmutex/Pomolin/issues</url>
++	<url type="vcs-browser">https://github.com/lockedmutex/Pomolin</url>
+ 
+ 	<releases>
+         <release date="2025-09-06" version="1.1.10">
+--
+libgit2 1.7.2
+

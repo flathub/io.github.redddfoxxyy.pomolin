@@ -13,28 +13,30 @@ finish-args:
 modules:
   - name: pomolin
     buildsystem: simple
+    build-commands:
+      - cp -r pomolin/* /app/
+      - install -Dm644 packaging/flatpak/io.github.redddfoxxyy.pomolin.desktop -t /app/share/applications/
+      - install -Dm644 packaging/flatpak/io.github.redddfoxxyy.pomolin.svg -t /app/share/icons/hicolor/scalable/apps/
+      - install -Dm644 packaging/flatpak/io.github.redddfoxxyy.pomolin.metainfo.xml -t /app/share/metainfo/
     sources:
       - type: git
-        url: https://github.com/RedddFoxxyy/Pomolin.git
+        url: https://github.com/lockedmutex/Pomolin.git
         tag: v1.1.10
+        commit: e4d5a898e1f11879db70a2342ed932e630d84c65
 
       - type: archive
-        url: https://github.com/RedddFoxxyy/Pomolin/releases/download/v1.1.10/pomolin_x86_64_linux.tar.gz
-        sha256: "18695b635e301c889e1cc89104e6f550d621ec4e30a7f5ecdeba28f899c0aeb7"
-        dest: "pomolin"
+        url: https://github.com/lockedmutex/Pomolin/releases/download/v1.1.10/pomolin_x86_64_linux.tar.gz
+        sha256: 786228fad4a28423e5b4ba255dc7169817e2b5e98d68e52d4aad76e52aab45cc
+        dest: pomolin
         only-arches:
           - x86_64
 
       - type: archive
-        url: https://github.com/RedddFoxxyy/Pomolin/releases/download/v1.1.10/pomolin_aarch64_linux.tar.gz
-        sha256: "503aa99d9a9c30510b4255e50d1e14d952509e434ef167786ced26362174429d"
-        dest: "pomolin"
+        url: https://github.com/lockedmutex/Pomolin/releases/download/v1.1.10/pomolin_aarch64_linux.tar.gz
+        sha256: cffdcfc0617f6568637d9ce587c240fdaf5150779cb2e3b7e2c9d21f79985c12
+        dest: pomolin
         only-arches:
           - aarch64
 
-    build-commands:
-      - cp -r pomolin/* /app/
-
-      - install -Dm644 packaging/flatpak/io.github.redddfoxxyy.pomolin.desktop /app/share/applications/io.github.redddfoxxyy.pomolin.desktop
-      - install -Dm644 packaging/flatpak/io.github.redddfoxxyy.pomolin.svg /app/share/icons/hicolor/scalable/apps/io.github.redddfoxxyy.pomolin.svg
-      - install -Dm644 packaging/flatpak/io.github.redddfoxxyy.pomolin.metainfo.xml /app/share/metainfo/io.github.redddfoxxyy.pomolin.metainfo.xml
+      - type: patch
+        path: fix-appdata.patch
